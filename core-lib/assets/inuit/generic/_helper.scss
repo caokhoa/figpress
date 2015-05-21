@@ -1,0 +1,626 @@
+/*------------------------------------*\
+    $HELPER
+\*------------------------------------*/
+/**
+ * A series of helper classes to use arbitrarily. Only use a helper class if an
+ * element/component doesn’t already have a class to which you could apply this
+ * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
+ * that ruleset as opposed to adding the `.float--left` class to the markup.
+ *
+ * A lot of these classes carry `!important` as you will always want them to win
+ * out over other selectors.
+ */
+
+
+/**
+ * Add/remove floats
+ */
+.float--right   { float:right!important; }
+.float--left    { float:left !important; }
+.float--center  { margin-let: auto; margin-right: auto; }
+.float--none    { float:none !important; }
+
+
+/**
+ * Text alignment
+ */
+.text--left     { text-align:left  !important; }
+.text--center   { text-align:center!important; }
+.text--right    { text-align:right !important; }
+
+
+/**
+ * Font weights
+ */
+.weight--light      { font-weight:300!important; }
+.weight--normal     { font-weight:400!important; }
+.weight--semibold   { font-weight:600!important; }
+
+
+.center {margin: 0 auto;}
+.inline-block {display: inline-block;}
+.hide {display: none !important;}
+input:focus:-moz-placeholder {color: transparent;}
+input:focus::-moz-placeholder {color: transparent;}
+.corlor-warning {color: $color-warning;}
+.color-error {color: #ee3c00;}
+.color-success {color: #27ae93;}
+
+/**
+ * Add/remove margins
+ */
+.push           { margin:       $base-spacing-unit!important; }
+.push--top      { margin-top:   $base-spacing-unit!important; }
+.push--right    { margin-right: $base-spacing-unit!important; }
+.push--bottom   { margin-bottom:$base-spacing-unit!important; }
+.push--left     { margin-left:  $base-spacing-unit!important; }
+.push--ends     { margin-top:   $base-spacing-unit!important; margin-bottom:$base-spacing-unit!important; }
+.push--sides    { margin-right: $base-spacing-unit!important; margin-left:  $base-spacing-unit!important; }
+
+.push-half          { margin:       $half-spacing-unit!important; }
+.push-half--top     { margin-top:   $half-spacing-unit!important; }
+.push-half--right   { margin-right: $half-spacing-unit!important; }
+.push-half--bottom  { margin-bottom:$half-spacing-unit!important; }
+.push-half--left    { margin-left:  $half-spacing-unit!important; }
+.push-half--ends    { margin-top:   $half-spacing-unit!important; margin-bottom:$half-spacing-unit!important; }
+.push-half--sides   { margin-right: $half-spacing-unit!important; margin-left:  $half-spacing-unit!important; }
+
+.flush          { margin:       0!important; }
+.flush--top     { margin-top:   0!important; }
+.flush--right   { margin-right: 0!important; }
+.flush--bottom  { margin-bottom:0!important; }
+.flush--left    { margin-left:  0!important; }
+.flush--ends    { margin-top:   0!important; margin-bottom:0!important; }
+.flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+
+.m {
+    margin: $base-spacing-unit !important;
+}
+.mt {
+    margin-top: $base-spacing-unit !important;
+}
+.mr {
+    margin-right: $base-spacing-unit !important;
+}
+.mb {
+    margin-bottom: $base-spacing-unit !important;
+}
+.ml {
+    margin-left: $base-spacing-unit !important;
+}
+.mh {
+    margin-left: $base-spacing-unit !important;
+    margin-right: $base-spacing-unit !important;
+}
+.mv {
+    margin-bottom: $base-spacing-unit !important;
+    margin-top: $base-spacing-unit !important;
+}
+.m-- {
+    margin: $third-spacing-unit !important;
+}
+.mt-- {
+    margin-top: $third-spacing-unit !important;
+}
+.mr-- {
+    margin-right: $third-spacing-unit !important;
+}
+.mb-- {
+    margin-bottom: $third-spacing-unit !important;
+}
+.ml-- {
+    margin-left: $third-spacing-unit !important;
+}
+.mh-- {
+    margin-left: $third-spacing-unit !important;
+    margin-right: $third-spacing-unit !important;
+}
+.mv-- {
+    margin-bottom: $third-spacing-unit !important;
+    margin-top: $third-spacing-unit !important;
+}
+.m- {
+    margin: $half-spacing-unit !important;
+}
+.mt- {
+    margin-top: $half-spacing-unit !important;
+}
+.mr-, .zone-upload-file.zone-upload-file--right .qq-upload-list {
+    margin-right: $half-spacing-unit !important;
+}
+.mb- {
+    margin-bottom: $half-spacing-unit !important;
+}
+.ml-, .zone-upload-file.zone-upload-file--left .qq-upload-list {
+    margin-left: $half-spacing-unit !important;
+}
+.mh- {
+    margin-left: $half-spacing-unit !important;
+    margin-right: $half-spacing-unit !important;
+}
+.mv- {
+    margin-bottom: $half-spacing-unit !important;
+    margin-top: $half-spacing-unit !important;
+}
+.m\+ {
+    margin: $double-spacing-unit !important;
+}
+.mt\+ {
+    margin-top: $double-spacing-unit !important;
+}
+.mr\+ {
+    margin-right: $double-spacing-unit !important;
+}
+.mb\+ {
+    margin-bottom: $double-spacing-unit !important;
+}
+.ml\+ {
+    margin-left: $double-spacing-unit !important;
+}
+.mh\+ {
+    margin-left: $double-spacing-unit !important;
+    margin-right: $double-spacing-unit !important;
+}
+.mv\+ {
+    margin-bottom: $double-spacing-unit !important;
+    margin-top: $double-spacing-unit !important;
+}
+.m\+\+ {
+    margin: $double-spacing-unit * 2 !important;
+}
+.mt\+\+ {
+    margin-top: $double-spacing-unit * 2 !important;
+}
+.mr\+\+ {
+    margin-right: $double-spacing-unit * 2 !important;
+}
+.mb\+\+ {
+    margin-bottom: $double-spacing-unit * 2 !important;
+}
+.ml\+\+ {
+    margin-left: $double-spacing-unit * 2 !important;
+}
+.mh\+\+ {
+    margin-left: $double-spacing-unit * 2 !important;
+    margin-right: $double-spacing-unit * 2 !important;
+}
+.mv\+\+ {
+    margin-bottom: $double-spacing-unit * 2 !important;
+    margin-top: $double-spacing-unit * 2 !important;
+}
+.m0 {
+    margin: 0 !important;
+}
+.mt0 {
+    margin-top: 0 !important;
+}
+.mr0 {
+    margin-right: 0 !important;
+}
+.mb0 {
+    margin-bottom: 0 !important;
+}
+.ml0 {
+    margin-left: 0 !important;
+}
+.mh0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.mv0 {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+.-m {
+    margin: -$base-spacing-unit !important;
+}
+.-mt {
+    margin-top: -$base-spacing-unit !important;
+}
+.-mr {
+    margin-right: -$base-spacing-unit !important;
+}
+.-mb {
+    margin-bottom: -$base-spacing-unit !important;
+}
+.-ml {
+    margin-left: -$base-spacing-unit !important;
+}
+.-mh {
+    margin-left: -$base-spacing-unit !important;
+    margin-right: -$base-spacing-unit !important;
+}
+.-mv {
+    margin-bottom: -$base-spacing-unit !important;
+    margin-top: -$base-spacing-unit !important;
+}
+.-m-- {
+    margin: -$third-spacing-unit !important;
+}
+.-mt-- {
+    margin-top: -$third-spacing-unit !important;
+}
+.-mr-- {
+    margin-right: -$third-spacing-unit !important;
+}
+.-mb-- {
+    margin-bottom: -$third-spacing-unit !important;
+}
+.-ml-- {
+    margin-left: -$third-spacing-unit !important;
+}
+.-mh-- {
+    margin-left: -$third-spacing-unit !important;
+    margin-right: -$third-spacing-unit !important;
+}
+.-mv-- {
+    margin-bottom: -$third-spacing-unit !important;
+    margin-top: -$third-spacing-unit !important;
+}
+.-m- {
+    margin: -$half-spacing-unit !important;
+}
+.-mt- {
+    margin-top: -$half-spacing-unit !important;
+}
+.-mr- {
+    margin-right: -$half-spacing-unit !important;
+}
+.-mb- {
+    margin-bottom: -$half-spacing-unit !important;
+}
+.-ml- {
+    margin-left: -$half-spacing-unit !important;
+}
+.-mh- {
+    margin-left: -$half-spacing-unit !important;
+    margin-right: -$half-spacing-unit !important;
+}
+.-mv- {
+    margin-bottom: -$half-spacing-unit !important;
+    margin-top: -$half-spacing-unit !important;
+}
+.-m\+ {
+    margin: -$double-spacing-unit !important;
+}
+.-mt\+ {
+    margin-top: -$double-spacing-unit !important;
+}
+.-mr\+ {
+    margin-right: -$double-spacing-unit !important;
+}
+.-mb\+ {
+    margin-bottom: -$double-spacing-unit !important;
+}
+.-ml\+ {
+    margin-left: -$double-spacing-unit !important;
+}
+.-mh\+ {
+    margin-left: -$double-spacing-unit !important;
+    margin-right: -$double-spacing-unit !important;
+}
+.-mv\+ {
+    margin-bottom: -$double-spacing-unit !important;
+    margin-top: -$double-spacing-unit !important;
+}
+.-m\+\+ {
+    margin: -$double-spacing-unit * 2 !important;
+}
+.-mt\+\+ {
+    margin-top: -$double-spacing-unit * 2 !important;
+}
+.-mr\+\+ {
+    margin-right: -$double-spacing-unit * 2 !important;
+}
+.-mb\+\+ {
+    margin-bottom: -$double-spacing-unit * 2 !important;
+}
+.-ml\+\+ {
+    margin-left: -$double-spacing-unit * 2 !important;
+}
+.-mh\+\+ {
+    margin-left: -$double-spacing-unit * 2 !important;
+    margin-right: -$double-spacing-unit * 2 !important;
+}
+.-mv\+\+ {
+    margin-bottom: -$double-spacing-unit * 2 !important;
+    margin-top: -$double-spacing-unit * 2 !important;
+}
+
+/**
+ * Add/remove paddings
+ */
+.soft           { padding:       $base-spacing-unit!important; }
+.soft--top      { padding-top:   $base-spacing-unit!important; }
+.soft--right    { padding-right: $base-spacing-unit!important; }
+.soft--bottom   { padding-bottom:$base-spacing-unit!important; }
+.soft--left     { padding-left:  $base-spacing-unit!important; }
+.soft--ends     { padding-top:   $base-spacing-unit!important; padding-bottom:$base-spacing-unit!important; }
+.soft--sides    { padding-right: $base-spacing-unit!important; padding-left:  $base-spacing-unit!important; }
+
+.soft-half           { padding:       $half-spacing-unit!important; }
+.soft-half--top      { padding-top:   $half-spacing-unit!important; }
+.soft-half--right    { padding-right: $half-spacing-unit!important; }
+.soft-half--bottom   { padding-bottom:$half-spacing-unit!important; }
+.soft-half--left     { padding-left:  $half-spacing-unit!important; }
+.soft-half--ends     { padding-top:   $half-spacing-unit!important; padding-bottom:$half-spacing-unit!important; }
+.soft-half--sides    { padding-right: $half-spacing-unit!important; padding-left:  $half-spacing-unit!important; }
+
+.hard           { padding:       0!important; }
+.hard--top      { padding-top:   0!important; }
+.hard--right    { padding-right: 0!important; }
+.hard--bottom   { padding-bottom:0!important; }
+.hard--left     { padding-left:  0!important; }
+.hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
+.hard--sides    { padding-right: 0!important; padding-left:  0!important; }
+
+.p {
+    padding: $base-spacing-unit !important;
+}
+.pt {
+    padding-top: $base-spacing-unit !important;
+}
+.pr {
+    padding-right: $base-spacing-unit !important;
+}
+.pb {
+    padding-bottom: $base-spacing-unit !important;
+}
+.pl {
+    padding-left: $base-spacing-unit !important;
+}
+.ph {
+    padding-left: $base-spacing-unit !important;
+    padding-right: $base-spacing-unit !important;
+}
+.pv {
+    padding-bottom: $base-spacing-unit !important;
+    padding-top: $base-spacing-unit !important;
+}
+.p-- {
+    padding: $third-spacing-unit !important;
+}
+.pt-- {
+    padding-top: $third-spacing-unit !important;
+}
+.pr-- {
+    padding-right: $third-spacing-unit !important;
+}
+.pb-- {
+    padding-bottom: $third-spacing-unit !important;
+}
+.pl-- {
+    padding-left: $third-spacing-unit !important;
+}
+.ph-- {
+    padding-left: $third-spacing-unit !important;
+    padding-right: $third-spacing-unit !important;
+}
+.pv-- {
+    padding-bottom: $third-spacing-unit !important;
+    padding-top: $third-spacing-unit !important;
+}
+.p- {
+    padding: $half-spacing-unit !important;
+}
+.pt- {
+    padding-top: $half-spacing-unit !important;
+}
+.pr- {
+    padding-right: $half-spacing-unit !important;
+}
+.pb- {
+    padding-bottom: $half-spacing-unit !important;
+}
+.pl- {
+    padding-left: $half-spacing-unit !important;
+}
+.ph- {
+    padding-left: $half-spacing-unit !important;
+    padding-right: $half-spacing-unit !important;
+}
+.pv- {
+    padding-bottom: $half-spacing-unit !important;
+    padding-top: $half-spacing-unit !important;
+}
+.p\+ {
+    padding: $double-spacing-unit !important;
+}
+.pt\+ {
+    padding-top: $double-spacing-unit !important;
+}
+.pr\+ {
+    padding-right: $double-spacing-unit !important;
+}
+.pb\+ {
+    padding-bottom: $double-spacing-unit !important;
+}
+.pl\+ {
+    padding-left: $double-spacing-unit !important;
+}
+.ph\+ {
+    padding-left: $double-spacing-unit !important;
+    padding-right: $double-spacing-unit !important;
+}
+.pv\+ {
+    padding-bottom: $double-spacing-unit !important;
+    padding-top: $double-spacing-unit !important;
+}
+.p\+\+ {
+    padding: $double-spacing-unit * 2 !important;
+}
+.pt\+\+ {
+    padding-top: $double-spacing-unit * 2 !important;
+}
+.pr\+\+ {
+    padding-right: $double-spacing-unit * 2 !important;
+}
+.pb\+\+ {
+    padding-bottom: $double-spacing-unit * 2 !important;
+}
+.pl\+\+ {
+    padding-left: $double-spacing-unit * 2 !important;
+}
+.ph\+\+ {
+    padding-left: $double-spacing-unit * 2 !important;
+    padding-right: $double-spacing-unit * 2 !important;
+}
+.pv\+\+ {
+    padding-bottom: $double-spacing-unit * 2 !important;
+    padding-top: $double-spacing-unit * 2 !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pt0 {
+    padding-top: 0 !important;
+}
+.pr0 {
+    padding-right: 0 !important;
+}
+.pb0 {
+    padding-bottom: 0 !important;
+}
+.pl0 {
+    padding-left: 0 !important;
+}
+.ph0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.pv0 {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+/*
+ * Add Position 
+ */
+.pos--top       { position: relative;}
+.pos--left      { position: relative;}
+.pos--right     { position: relative;}
+.pos--bottom    { position: relative;}
+.pos--clear      { position: inherit !important;}
+.disable {
+    background: $color-disable;
+    border: 1px $color-disable solid;    
+    color: $color-dark-grey;
+}
+
+/**
+ * Pull items full width of `.island` parents.
+ */
+.full-bleed{
+    margin-right:-$base-spacing-unit!important;
+    margin-left: -$base-spacing-unit!important;
+
+    .islet &{
+        margin-right:-($half-spacing-unit)!important;
+        margin-left: -($half-spacing-unit)!important;
+    }
+}
+
+
+/**
+ * Add a help cursor to any element that gives the user extra information on
+ * `:hover`.
+ */
+.informative{
+    cursor:help!important;
+}
+
+
+/**
+ * Mute an object by reducing its opacity.
+ */
+.muted{
+    opacity:0.5!important;
+    filter:alpha(opacity = 50)!important;
+}
+
+
+/**
+ * Align items to the right where they imply progression/movement forward, e.g.:
+ *
+   <p class=proceed><a href=#>Read more...</a></p>
+ *
+ */
+.proceed{
+    text-align:right!important;
+}
+
+
+/**
+ * Add a right-angled quote to links that imply movement, e.g.:
+ *
+   <a href=# class=go>Read more</a>
+ *
+ */
+.go:after{
+    content:"\00A0" "\00BB"!important;
+}
+
+/**
+ * Render an ellipsis ("...") to represent clipped text
+ *
+   "text-overflow:ellipsis"
+ *
+ */
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/**
+ * Apply capital case to an element (usually a `strong`).
+ */
+.caps{
+    text-transform:uppercase!important;
+}
+
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+@mixin accessibility{
+    border:0!important;
+    clip:rect(0 0 0 0)!important;
+    height:1px!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    padding:0!important;
+    position: absolute!important;
+    width:1px!important;
+}
+.accessibility,
+.visuallyhidden, .hide {
+    @include accessibility;
+}
+@if $responsive{
+    @each $state in palm, lap, lap-and-up, portable, desk, desk-wide{
+        @include media-query(#{$state}){
+            .accessibility--#{$state},
+            .visuallyhidden--#{$state}{
+                @include accessibility;
+            }
+        }
+    }
+}
+
+.dp-t {
+    display: table;
+    table-layout: fixed;
+    
+    .dp-t__r {
+        display: table-row;
+    }
+    .dp-t__c {
+        display: table-cell;
+    }
+}
+

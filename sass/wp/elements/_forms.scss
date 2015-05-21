@@ -1,0 +1,431 @@
+/*------------------------------------*\
+    FORM ELEMENT STYLES    
+\*------------------------------------*/
+
+/**
+ * Forms
+ */
+
+form{
+    @include rem(margin-bottom, 0);
+}
+
+input::-ms-clear {display: none; width:0; height:0;}
+
+/**
+ * Add border box for input search
+ */
+
+input[type="search"]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/**
+ * Input Elements
+ */
+
+.text-input,
+textarea, select{
+    border: 1px $input-border-color solid;
+    color: $color-dark;
+    padding: $input-padding;
+    background: $input-background;
+    transition: all 0.1s ease-in;   
+    vertical-align: middle;
+    outline: none;  
+    width: 100%; 
+    font-size: 14px;
+    font-size: 1.4rem;
+
+    &:focus{
+        @extend %focus-style;
+    }
+    &[disabled], &[disabled]:hover, &[disabled]:active {
+        background-color: $color-disable;
+        border: 1px $disable-border-color solid;    
+        color: $disable-text-color;
+        cursor: default;
+    }
+}
+
+select {
+    padding: $select-padding;
+}
+.disable, .disable:hover, .disable:active {
+    background-color: $color-disable;
+    border: 1px $disable-border-color solid;    
+    color: $disable-text-color;
+    cursor: default;
+}
+.text-view {
+    @include rem(margin-top, 0.125);
+}
+
+/**
+ * Input inverted
+ */
+
+.input-inverted{
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+/**
+ * Medium input
+ */
+
+.input-medium{
+    padding: $input-padding-medium;    
+}
+
+/**
+ * Large input
+ */
+
+.input-large{
+    padding: $input-padding-large;
+    @include font-size(16px, false);
+}
+
+.form-control{
+    position: relative;
+    @include rem(margin-bottom, 0.75);
+
+    .text-input{
+        padding-right: 35px;
+        margin-bottom: 0;
+    }
+
+    .fa{
+        position: absolute;
+        right: 5px;
+        top: 9%;
+        margin: 0;
+        color: $base-ui-color;
+    }
+
+    
+    /* Icon on the left side */
+
+    &.icon-left {
+        
+        .text-input{
+            padding-left: 35px;
+            padding-right: inherit;
+        }
+
+        .fa{
+            left: 10px;
+            right: auto;
+        }
+    }
+
+    /* Button unstyled */
+
+    .btn--unstyled{
+        padding: 0 1em;
+        margin: 0;
+        vertical-align: top;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+}
+
+
+/**
+ * Form control Inline
+ */
+
+.form-control--inline{
+        
+    .text-input{
+        width: auto;
+        padding: $input-padding;
+        @include rem(margin-right,-0.3);
+    }
+
+    /* Button */
+
+    .btn{
+        margin-bottom: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+
+/**
+ * Round text input
+ */
+
+.input-soft{
+    border-radius: 200px;
+}
+
+/**
+ * Margins for Select, File
+ */
+
+select, 
+input[type="file"], 
+input[type="color"],
+input[type="range"],
+.label-checkbox,
+.label-radio,
+textarea,
+.text-input
+{
+    @include rem(margin-bottom, 0.5);    
+}
+
+
+/**
+ * Wide select
+ */
+
+.select-wide{
+    width: 100%;
+}
+
+/**
+ * Checkbox, Radio
+ */
+
+input[type="checkbox"],
+input[type="radio"]{
+    margin-right: 0.5em;
+}
+
+/**
+ * Label
+ */
+
+label{
+    @include rem(margin-bottom, 0.25);
+    @include rem(margin-top, 0.125);
+    font-weight: 300;
+    color: $color-label;
+}
+
+
+/**
+ * Checkbox Display
+ */
+
+.label-checkbox, .label-radio{
+    
+    $spacing: 20px;
+    font-weight: normal;
+
+    input{
+        float: left;
+        margin-left: -($spacing);
+        margin-top: 6px;
+        margin-top: 6px/$base-font-size * 1em;
+        margin-right: 0;
+    }
+    padding-left: $spacing;
+    label {
+        @include rem(margin-top, 0);
+    }
+}
+
+
+/**
+ * Checkbox Inline
+ */
+
+.label-checkbox--inline, .label-radio--inline {
+   
+    font-weight: normal;
+    display: inline-block;
+    @include rem(margin-left, 0.125);
+    padding-left: 0;
+
+    input {
+        float: none;
+        margin-left: 0;
+    }
+}
+
+/**
+ * Inline Input
+ */
+
+.input-inline{
+    width: auto;
+}
+
+
+/**
+ * Inline Label
+ */
+.label-inline{
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+.label-group {
+    font-weight: 600;
+    color: $color-label;
+}
+
+/**
+ * Fieldset
+ */
+
+
+fieldset{
+    border-color: $input-border-color;
+    padding: $grid-spacing/2;
+}
+
+/**
+ * Error Input
+ */
+
+.input-error{
+    border-color: $color-warning;
+}
+
+/**
+ * Error Label
+ */
+
+.label-error{
+    color: $color-warning;
+    display: inline-block;
+    @include rem(margin-bottom, 0.5);
+    @include font-size($milli-size, false);
+    font-weight: normal;
+    margin-top: -0.5em;
+    overflow-y: hidden;
+}
+
+/**
+ * Input groups
+ */
+
+.input-group{
+
+    @include rem(margin-bottom);
+
+    .text-input, textarea{
+        margin-bottom: 0;
+        border-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+
+        &:first-child{
+            border-top-left-radius: $base-radius;
+            border-top-right-radius: $base-radius;
+            margin-bottom: -1px;
+        }
+
+        &:last-child{
+            border-bottom-left-radius: $base-radius;
+            border-bottom-right-radius: $base-radius;   
+        }
+
+        &:focus{
+            position: relative;
+        }
+    }
+}
+
+/**
+ * Field inline
+ */
+
+.field--inline{
+    label {
+        width: auto;
+        display: inline-block;
+        vertical-align: top;
+        @include rem(margin-right, 0.5);
+    }
+    input, select {
+        width: auto;
+    }
+    .selecter {
+        min-width: 50%;
+        display: inline-block;
+    }
+}
+
+/**
+ * Check box color style
+ */
+
+.ui-checkbox {
+
+    @include clearfix;
+
+    .checkbox__box {
+        border: 1px $color-primary solid;
+        @include rem(margin-right, 1, 8px);
+        @include rem(padding, 0.25);
+        position: relative;
+        width: 14px;
+        @include rem(margin-top, 1, 5px);
+
+        .checkbox__icon-check {
+            background: url("../images/check_black.png") 2px 0 no-repeat;
+            position: absolute;
+            top: -4px;
+            left: 1px;
+            width: 16px;
+            height: 16px;
+        }
+
+    }
+}
+.checkbox__indicators {
+    
+    .ui-checkbox {
+        @include clearfix;
+        margin-left: 0;
+        position: relative;
+        .ui-checkbox-box {
+            border: 1px $color-primary solid;
+            @include rem(padding, 0.25);
+            position: absolute;
+            width: 14px;
+            top: 2px;
+        }
+        .ui-state-active .ui-icon, 
+        .ui-state-hover .ui-icon, 
+        .ui-state-focus .ui-icon {
+            background: url("../images/check_black.png") 2px 0 no-repeat;
+            position: absolute;
+            top: -4px;
+            left: 1px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+.label-checkbox__indicators {
+    position: relative;
+    @include rem(padding-left);
+    @include rem(margin-top, 1, -28px);
+}
+
+/* Fix Google Chrome form autofill and its yellow background */
+
+input:-webkit-autofill, 
+input:-webkit-autofill, 
+textarea:-webkit-autofill, 
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+    &:focus {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+    }
+}

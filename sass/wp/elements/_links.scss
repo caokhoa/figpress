@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    LINKS.CSS    
+\*------------------------------------*/
+
+/**
+*   Default Links
+**/
+
+a{
+    @include link-colors($link-color, $link-hover-color, $link-visited-color);
+    text-decoration: none;
+
+    @if $link-underline{
+        text-decoration: underline;
+    }
+
+    @if $link-underline-on-hover{
+
+        &:hover{
+            text-decoration: none; 
+            border-bottom: 1px solid $link-color;
+        }
+    }   
+}
+
+/**
+*   Links with dark background
+**/
+
+a.light-green{
+    @include link-colors($color-light-green, $link-hover-color, $link-visited-color);
+    text-decoration: none;  
+
+    @if $link-underline{
+        text-decoration: underline;
+    }
+
+    @if $link-underline-on-hover{
+
+        &:hover{
+            text-decoration: underline; 
+        }       
+    }   
+}
+a .fa {
+    color: $color-secondary;
+    &:hover {
+        cursor: pointer;
+        color: $color-secondary;
+    }
+}

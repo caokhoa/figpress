@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    WP style.CSS
+\*------------------------------------*/
+
+
+/**
+ * Setup for project
+ */
+
+
+@import "_assets/sass/wp/modules/variables";
+@import "_assets/sass/wp/modules/mixins";
+
+/**
+ * Core 
+ */
+
+@import "_assets/core-lib/core";
+
+/**
+ * She's all yours, cap'n... Begin importing your stuff here.
+ */
+
+@import "_assets/sass/wp/wp";

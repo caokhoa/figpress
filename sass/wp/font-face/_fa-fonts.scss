@@ -1,0 +1,48 @@
+/*------------------------------------*\
+	FA FONTS.CSS    
+\*------------------------------------*/
+
+
+$fa-font-path: "fonts/font-awesome";
+
+@import "font-awesome/scss/font-awesome.scss";
+
+/** Add some margin to the icons */
+
+.fa{
+	margin-right: 0.571428em;
+}
+
+/**
+ * Lone icons
+ */
+
+.fa-lone{
+    margin-right: 0;
+}
+
+/**
+ * Lone icons
+ */
+
+.fa-right{
+    margin-left: 0.571428em;
+    margin-right: 0;
+}
+
+/**
+ * Icons soft
+ */
+
+.icon--soft{
+
+    border: 1px $color-dark-grey solid;
+    border-radius: 200px;
+    padding: 0.2em 0.7em;
+    margin-right: 0.571428em; 
+    color: $color-primary;
+    background-color: $color-light-grey;
+    &.disable {
+        @extend .disable;
+    }
+}

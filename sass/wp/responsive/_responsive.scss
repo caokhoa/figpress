@@ -1,0 +1,72 @@
+/*------------------------------------*\
+    RESPONSIVE.CSS
+\*------------------------------------*/
+
+@import "../grids/grid";
+
+/*
+ * Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+
+/**
+ *  Mobile Large 620px/38.75em;
+ */
+
+ @import "mobile";
+
+ /**
+ *  Tablet Small 740px/46.25em
+ */
+
+ @import "tablet-small";
+
+ /**
+ * Tablet Large 880px/55em
+ */
+
+ @import "tablet-large";
+
+ /**
+ * Desktop Small 955px/59.6875em
+ */
+
+ @import "desktop-small";
+
+ /**
+ * Desktop Medium 1100px/68.75em
+ */
+
+ @import "desktop-medium";
+
+ /**
+ * Desktop Large 1240px/77.5em
+ */
+
+ @import "desktop-large";
+
+
+ /**
+ * Desktop X-Large 1403px/87.6875em
+ */
+
+ @import "desktop-x-large";
+
+
+/**
+ * Retina
+ */
+
+@include media-query(retina){
+
+}

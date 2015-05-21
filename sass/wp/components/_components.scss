@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+
+// Menus styles
+
+@import "menus";
+
+// Layout
+
+@import "header";
+@import "content";
+
+// Page Content Templates
+
+@import "page-post";
+@import "page-home";
+@import "page-blog";
+
+// Widgets, Search, Comments, Forms, Sharing, Media
+
+@import "search";
+@import "widgets";
+@import "comments";
+@import "media";
+@import "flyout";
+@import "breadcrumbs";
+@import "dropdown";
+@import "accordion";
+@import "panel";
+@import "pagination";
+@import "navigation";
+@import "tabs";
+
+@import "footer";
+

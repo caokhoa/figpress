@@ -1,0 +1,174 @@
+/*------------------------------------*\
+    $FLYOUT
+\*------------------------------------*/
+/**
+ * Flyouts are pieces of content that fly out of a parent when said parent is
+ * hovered. They typically appear bottom-left of the parent.
+ *
+   <div class=flyout>
+       Foo
+       <div class=flyout__content>
+           <h1>Lorem</h1>
+           <p>Ipsum</p>
+       </div>
+   </div>
+ *
+ * Extend these objects in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/B52HG
+ *
+ */
+$flyout-color-background    : $color-primary;
+$flyout-color-border        : $color-dark;
+
+.flyout,
+.flyout--alt{
+    position:relative;
+    overflow:hidden;
+}
+    .flyout__content{
+        /**
+         * Position the flyouts off-screen. This is typically better than
+         * `display:none;`.
+         */
+        position:absolute;
+        top:100%;
+        left:-99999px;
+        z-index: 99999;
+        width: 180px;
+        background: $flyout-color-background;
+        border-bottom: 2px solid $flyout-color-border;
+/*        -webkit-box-shadow: $base-box-shadow;
+         -khtml-box-shadow: $base-box-shadow;
+           -moz-box-shadow: $base-box-shadow;
+                box-shadow: $base-box-shadow;*/
+        > ul {
+            margin-bottom: 0;
+        }
+    }
+    
+    /**
+     * Bring the flyouts into view when you hover their parents.
+     * Two different types of flyout; ‘regular’ (`.flyout`) and ‘alternative’
+     * (`.flyout--alt`).
+     */
+    .flyout:hover,
+    .flyout--alt:hover{
+        overflow:visible;
+        cursor: pointer;
+    }
+
+    /**
+     * Regular flyouts sit all the way from the top, flush left.
+     */
+    .flyout:hover > .flyout__content{
+        left: 60px;
+        top: -107px;
+    }
+
+    /**
+     * Alternative flyouts sit all the way from the left, flush top.
+     */
+    .flyout--alt:hover > .flyout__content{
+        top:0;
+        left:100%;
+    }
+    .flyout:hover > .flyout__content li{
+        @include rem(padding, 1, 5px 20px);
+        margin-bottom: 0;
+        border-bottom: 1px  solid $flyout-color-border;
+    }
+    .flyout:hover > .flyout__content .fa {
+        position: absolute;
+        top: 37%;
+        left: -10px;
+        color: $flyout-color-background;
+    }
+
+    /**
+     * Flyout mouse out (position)
+     */
+
+    .flyout--mouse-out {
+        
+        position:relative;
+
+        .flyout__content {
+            position:absolute;
+            left: -30px;
+            top: 33px;
+            width: 290px;
+            background-color: $color-dark-grey;
+            -webkit-box-shadow: $base-box-shadow;
+             -khtml-box-shadow: $base-box-shadow;
+               -moz-box-shadow: $base-box-shadow;
+                    box-shadow: $base-box-shadow;
+            > ul {
+                margin-bottom: 0;
+            }
+            li {
+                @include rem(padding, 1, 5px 20px);
+                margin-bottom: 0;
+                border-bottom: 1px $base-ui-color solid;
+                color: $color-primary;
+            }
+            .fa {
+                color: $color-primary;
+                &.fa-caret-up {
+                    top: -13px;
+                    left: 90px;
+                    color: $color-primary;
+                    line-height: 16px;
+                    overflow: hidden;
+                    position: absolute;
+                    padding: 0;
+                    margin: 0;
+                }
+                &.fa-folder {
+                    position: relative;
+                    right: 0;
+                    top: -35px;
+                    margin-right: 0;
+                }
+            }
+            
+        }
+    }
+
+    /**
+     * Flyout top menu (position)
+     */
+
+    .flyout--top {
+
+        float: left;
+        margin-top: 7px;
+        margin-left: 10px;
+        
+        &:hover {
+            border-bottom: 2px solid $flyout-color-background;
+            color: $flyout-color-background;
+        }
+        .fa {
+            margin-right: 0;
+            margin-left: 0.571428em;
+        }
+
+        .flyout__content {
+            width: 500px;
+            border-bottom: none;
+            padding-bottom: 8px;
+            -moz-column-count: 3;
+            -webkit-column-count: 3;
+            column-count: 3;
+        }
+        &:hover > .flyout__content {
+            left: -250px;
+            top: 23px;
+            li {
+                border-bottom: none;
+                margin-right: 0;
+            }
+        }
+        
+    }

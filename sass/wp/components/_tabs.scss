@@ -1,0 +1,292 @@
+/*------------------------------------*\
+    TABS.CSS
+\*------------------------------------*/
+
+/**
+ * Variables
+ */
+
+$tab-padding: 0.85714em 0.71428em 0;
+$tab-border: #d5dae0;
+$tab-radius: 0;
+$tab-border-color: true;
+
+
+/**
+ * Tabs
+ */
+
+.ui-tabs{
+    list-style: none;
+    margin-left: 0;
+    background-color: $color-light;
+    nav{
+        border-bottom: 1px $tab-border solid;
+         @include rem(padding-left, 0);
+
+        @include media-query(tablet-desktop){
+            display: block;
+        }
+    }
+
+    /* Active tab */
+    
+    .active{
+        border-bottom: 5px $color-dark-blue solid;        
+    }
+
+
+    /* Hide tabs */
+
+    .tab{
+        display: none;
+    }
+
+    .tab.active{
+        display: block;
+    }
+    &.tabs--background {
+        background: $color-dark-grey;
+    }
+    &.tabs--position {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        right: 0;
+        nav {
+            padding-left: 25.5%;
+        }
+    }
+    .tabs--b-right {
+        position: absolute;
+        top: 21px;
+        right: 24px;
+    }
+    
+}
+
+/* Tab Handle */
+
+.tab__handle{
+    color: $base-color;
+    display: inline-block;
+    font-family: $font-face;
+    @include font-size(22px, false);
+    padding: $tab-padding ;
+    text-decoration: none;   
+
+    &:hover{
+        color: $base-color;
+        text-decoration: none;
+    }     
+
+    &.active{
+         color: $base-color;
+    }
+}
+
+
+/* Mobile */
+
+.tab__handle--mobile {         
+    display: none;
+    cursor: pointer;
+    @include user-select(none);
+    @extend .accordion__header;
+    
+    @include media-query(phone){
+        display: block;
+    }
+
+
+    /* Arrow */
+
+    &:after{
+        @extend %accordion-arrow;
+    }
+
+
+    /*
+    Active
+     */
+    
+    &.active{
+        
+        color: $color-primary;
+        border-bottom: 1px $base-ui-color solid;
+        
+        @include rem(margin-bottom, 0.5);
+
+        &:after{
+            @extend %accordion-arrow-active;
+        }
+
+    }
+}
+
+
+/**
+ * ui-tabs--bordered
+ * Alternate Version with bordered tab link
+ */
+
+.ui-tabs--bordered{
+    padding: 0 1px;
+
+    .active{
+        border: 1px $tab-border solid;
+        border-radius: $tab-radius;
+        margin: 0 -1px;
+        border-bottom-color: #fff;
+        position: relative;
+        top: 1px;        
+    }
+
+    @if $tab-border-color{
+
+        .active{
+            border-top: 5px $color-primary solid;
+            border-left: none;
+            border-right: none;
+            margin-top: -1px;        
+        }
+    }
+
+
+    /**
+     * Mobile tabs
+     */
+    
+    .tab__handle--mobile{
+        border-left: none;
+        border-right: none;
+        border-top-width: 0px;
+        margin: 0;
+        top: 0;
+        border-top-color: $base-ui-color;
+        
+
+        &.active{
+            @include rem(margin-bottom, 0.5);
+            border-bottom-color: $base-ui-color;
+        }
+    }
+}
+
+/** ui-tabs--background **/
+
+.tab-navigation {
+    border-bottom: 1px solid $tab-border;
+    background-color: $color-light;
+    margin-bottom: 22px;
+    .ftabset{
+        border-bottom: none;
+        list-style: none;
+        margin-left: 0;
+        @include rem(padding-left, 0);
+        /*@include rem(margin-bottom);*/
+
+        ul{
+            margin: 0;
+
+            li {
+                @include rem(margin-right, 0.5);
+                margin-bottom: 0;
+                color: $base-color;
+                display: inline-block;
+                text-decoration: none;
+                a {
+                    color: $base-color;
+                    font-family: $font-face;
+                    @include font-size(22px, false);
+                    padding: $tab-padding ;
+                    text-decoration: none;  
+                }
+                &:hover{
+                    color: $base-color;
+                    text-decoration: none;
+                    @extend .active;
+                }   
+                &.active-item, &:hover{
+                    border-bottom: 5px $color-dark-blue solid;
+                    a {
+                        color: $color-secondary;
+                    }
+                }
+            }
+            li.tab-disable, li.disable-item {
+                background: $color-disable;
+                color: $color-dark-grey;
+                a {
+                    color: $color-dark-grey;
+                }
+            }
+        }
+        
+    }
+
+    &.tab--spaces {
+        padding-left: 25%;
+    }
+    &.tab--background {
+        background-color: $color-dark-blue;
+        @include rem(padding-top, 1, 6px);
+        border-bottom: none;
+
+        ul{
+            li {
+                @include rem(margin-right, 0);
+                color: $color-text-blue-light-bg;
+                background-color: $color-tab-background; 
+                @include rem(padding, 1, 4px 0);
+                box-shadow: $left-bottom-box-shadow;
+
+                -webkit-border-top-left-radius  : $base-radius;
+                -webkit-border-top-right-radius : $base-radius;
+                -moz-border-radius-topleft      : $base-radius;
+                -moz-border-radius-topright     : $base-radius;
+                border-top-left-radius          : $base-radius;
+                border-top-right-radius         : $base-radius;
+                a {
+                    color: $color-text-blue-light-bg;
+                    @include font-size(16px, false);
+                    @include rem(padding, 1, 0 48px 0 24px);
+                    text-align: left; 
+                }
+                &:hover{
+                    color: $base-color;
+                    text-decoration: none;
+                    @extend .active;
+                }   
+                &.active-item{
+                    background-color: $color-nice-blue; 
+                    border-bottom: none;
+                    box-shadow: none;
+                    a {
+                        color: $color-text-blue-light-bg;
+                    }
+                }
+            }
+            li.tab-disable, li.disable-item {
+                background: $color-disable;
+                color: $color-dark-grey;
+                a {
+                    color: $color-dark-grey;
+                }
+            }
+        }
+    }
+
+}
+
+
+.ui-tabs--content {
+    background: $color-nice-blue;
+    @include rem(padding, 0);
+    @include rem(margin-bottom, 1, 0px);
+    @include clearfix;
+}
+.tabs--position__content .ui-tabs--content {
+    padding-top: 60px;
+}

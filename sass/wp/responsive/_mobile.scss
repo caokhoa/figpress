@@ -1,0 +1,50 @@
+@include media-query(mobile){
+	ul,
+	ol {
+		margin-left: 0;
+	}
+
+	li > ul,
+	li > ol,
+	blockquote > ul,
+	blockquote > ol {
+		margin-left: 1.3333em;
+	}
+
+	blockquote {
+		margin-left: -1em;
+	}
+
+	blockquote > blockquote {
+		margin-left: 0;
+	}
+
+	.site-branding {
+		min-height: 3.2em;
+	}
+
+	.site-title {
+		font-size: 22px;
+		font-size: 2.2rem;
+		line-height: 1.0909;
+	}
+	.main-navigation {
+		margin-bottom: 11.1111%;
+	}
+
+	.main-navigation ul ul {
+		border-top: 0;
+		border-bottom: 0;
+	}
+	.pagination {
+	    border-top: 0 none;
+	    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+	    padding: 0;
+	}
+	.pagination .current .screen-reader-text {
+	    position: absolute !important;
+	}
+	.pagination .page-numbers {
+	    display: inline-block;
+	}
+}

@@ -1,0 +1,91 @@
+/*------------------------------------*\
+    PANEL.CSS
+\*------------------------------------*/
+
+$panel-background: $color-light;
+$panel-header-background: #c3d3e2;
+$panel-border: #f2f7fd;
+$panel-shadow: 1px 3px 4px 0 rgba(0, 0, 0, 0.3);
+
+.panel{
+    background-color: $panel-background;
+    box-shadow: $panel-shadow;
+    @include rem(margin-bottom);
+    @include rem(padding, 0);
+    
+    /* Panel Title */
+
+    .panel__title{
+        @include rem(padding, 1, 12px 24px);
+        border-bottom: 1px $panel-border solid;
+
+        h1, h2, h3, h4, h5, h6{
+            margin: 0;
+        }
+        h4 {
+            margin-bottom: 4px;
+        }
+    }
+
+    /* Panel body */
+
+    .panel__body{
+        @include rem(padding, 1, 12px 24px);
+    }
+
+    &.panel--transparent {
+        background-color: transparent;
+        box-shadow: none;
+
+        /* Panel Title */
+
+        .panel__title{
+            padding: 0;
+            border-bottom: 1px $base-ui-color solid;
+
+            h1, h2, h3, h4, h5, h6{
+                margin: 0;
+            }
+            h4 {
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Panel body */
+
+        .panel__body{
+            @include rem(padding, 1, 12px 0 );
+        }
+    }
+    &.panel--primary {
+        border-color: $panel-border;
+
+        .panel__title {
+            background-color: $panel-header-background;
+            border-color: $panel-border;
+            color: $color-secondary;
+        }
+    }
+
+
+    &.panel--secondary {
+        border: none;
+        box-shadow: none;
+        .panel__title {
+            background-color: $panel-header-background;
+            color: $color-secondary;
+            border: none;
+            @include rem(padding, 1, 6px 12px);
+            h4, h6 {
+                color: $color-secondary;
+            }
+
+        }
+        .panel__body {
+            background-color:$color-light;
+            border: none;
+            @include rem(padding, 1, 12px);
+        }
+    }
+}
+

@@ -1,0 +1,359 @@
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+
+$debug-mode : false;
+
+
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS FROM INUIT CSS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+
+$use-beautons     : true;
+$use-rules: true;
+
+/*------------------------------------*\
+    $FONT STYLE
+\*------------------------------------*/
+
+$font-face          : 'Noto Sans', Helvetica, Arial, sans-serif;
+$font-face-heading  : 'Noto Serif', serif;
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+$base-color       : #333;
+$base-font-family : $font-face;
+$base-font-size   : 10px;
+$base-line-height : 24px;
+$base-spacing-unit: $base-line-height;
+$base-ui-color    : #064771;
+$base-radius: 3px;
+$base-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) inset;
+
+
+/*------------------------------------*\
+    $UI ELEMENTS
+\*------------------------------------*/
+
+$ui-radius: 2px;
+$main-content-box-shadow : 0 2px 2px 0 rgba(0, 0, 0, 0.3) inset;
+$header-list-box-shadow : 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+$ui-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
+$right-box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, 0.3);
+$left-bottom-box-shadow: 5px 2px 6px -2px rgba(0, 0, 0, 0.2) inset;
+$bottom-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+
+
+$sidebar-box-shadow: $right-box-shadow;
+$dialog-box-shadow: $left-bottom-box-shadow;
+$tooltip-box-shadow: $right-box-shadow;
+$flyout-box-shadow: $right-box-shadow;
+$autocomplete-box-shadow: $bottom-box-shadow;
+
+$ui-position-top: -102px;
+/*------------------------------------*\
+    $TEXT DIRECTION
+\*------------------------------------*/
+
+$dir-default : "left";
+$dir-reverse : "right";
+$direction   : "LTR";
+
+@if $direction == "RTL" {
+    $dir-default : "right";
+    $dir-reverse : "left";
+}
+
+/*------------------------------------*\
+    $COLOR SWATCHES
+\*------------------------------------*/
+
+$color-primary: #31867d;
+
+$color-secondary: #333; /* Sidebar */
+
+$color-dark-blue: #185479; /* Sub header */
+$color-text-blue: #7fb5d5; /* Text color of dark blue bg */
+$color-light-blue: #d8e8f5; /* background section time log */
+$color-nice-blue: #f2f7fd; /* color for table data grid */
+$color-text-blue-light-bg: #5c819b; /* Text color of light blue bg */
+
+$color-light-green: #31867d;
+
+$color-dark: #1f1f1f; /* Inactive tabs, button 2 style*/
+$color-dark-grey: rgba(51, 51, 51, 0.7);
+$color-light-grey: #eee;
+$color-light: #fff;
+
+
+$color-disable: #dcdcdb;
+$disable-text-color: #9da1a4;
+$disable-border-color: #b2b2b2;
+
+$color-label: #9da1a4;
+$color-button: $color-primary;
+$color-button-border: $color-button;
+
+$color-warning: #E74C3C;
+$color-ui-dialog: #ccc;
+$color-ui-icons: #7f8080;
+$color-placeholder: rgba(51, 51, 51, 0.7);
+
+$color-even: #e1ebf4;
+$color-odd: #f2f7fd;
+
+$color-line: #e5e5e5;
+
+$color-tab-background: #d4e6f5;
+
+/*------------------------------------*\
+    $TABLE
+\*------------------------------------*/
+
+$table-background: #b5c8d3;
+$table-header-color: $color-dark-grey;
+$table-header-border: #8faab3;
+$table-body-color: $color-dark;
+$table-body-border: #e6ebef;
+
+
+/*------------------------------------*\
+    $GRID SETTINGS
+\*------------------------------------*/
+
+$grid-columns          : 24;
+$grid-tablet-columns   : 24;
+$grid-mobile-columns   : 24;
+$grid-spacing   : 24px;
+
+$site-min-width : 1280px;
+$site-width-full: 100%;
+
+$site-width-x-small: 700px;
+$site-width-small  : 936px;
+$site-width-medium : 970px;
+$site-width-large  : $site-min-width;
+
+/*------------------------------------*\
+    SIDEBAR
+\*------------------------------------*/
+
+$sidebar-width: 23.4%;
+$sidebar-height: 100%;
+$sidebar-top-position: 96px;
+$sidebar-background: #fafafa; /* Sidebar */
+
+
+/*------------------------------------*\
+    $BREAKPOINTS
+\*------------------------------------*/
+
+
+$bp-mobile-large            : 38.75em; /* 620px */
+$bp-tablet-small            : 46.25em; /* 740px */
+$bp-tablet-large            : 55em; /* 880px */
+$bp-desktop-small           : 59.6875em; /* 955px */
+$bp-desktop-medium          : 68.75em; /* 1100px */
+$bp-desktop-large           : 77.5em;  /* 1240px */
+$bp-desktop-x-large         : 87.6875em; /* 1403px */
+
+
+$phone-breakpoint-end        : 480px;
+$phone-breakpoint-start      : 38.75em;
+
+$tablet-breakpoint-start     : 46.25em;
+$tablet-breakpoint-end       : 64em;
+
+$desktop-breakpoint-start    : 64.063em;
+$widescreen-breakpoint-start : 1300px;
+
+// Here we define the lower and upper bounds for each media size
+$small-range: (0em, 40em); /* 0, 640px */
+$medium-range: (40.063em, 64em); /* 641px, 1024px */
+$large-range: (64.063em, 90em); /* 1025px, 1440px */
+$xlarge-range: (90.063em, 120em); /* 1441px, 1920px */
+$xxlarge-range: (120.063em); /* 1921px */
+
+
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+
+
+$heading-font-family: $font-face-heading;
+
+    /**
+     * Mobile Sizes     
+     */
+    
+    $h1-size: 30px; //.alpha
+    $h2-size: 24px; //.beta
+    $h3-size: 20px; //.gamma
+    $h4-size: 18px; //.delta
+    $h5-size: 16px; //.epsilon
+    $h6-size: 14px; //.zeta
+
+
+    /**
+     * Desktop font size
+     * Both tablets and desktops
+     */
+    
+    $h1-size-desktop: 38px;
+    $h2-size-desktop: 32px;
+    $h3-size-desktop: 24px;
+    $h4-size-desktop: 20px;
+    $h5-size-desktop: 18px;
+    $h6-size-desktop: 14px;
+
+
+/**
+ * Optional font sizes
+ */
+
+$giga-size  : 96px;
+$mega-size  : 72px;
+$kilo-size  : 48px;
+$milli-size : 13px;
+$micro-size : 12px;
+
+$icon-size : 32px;
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+$link-color              : $color-dark;
+$link-hover-color        : $color-secondary;
+$link-visited-color      : $link-color;
+$link-underline          : false;
+$link-underline-on-hover : true;
+
+
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+
+$input-border-color  : #b2b2b2;
+$input-background    : #FAFAFA;
+$input-padding       : 0.357142em 0.5em; /* 5px 7px */
+$input-padding-medium: 0.571428em; /* 8px */
+$input-padding-large : 1em; 
+$input-border-radius : $base-radius;
+$select-padding      : 0.2142857em; /* 3px*/
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+$button-padding            : 0.642857em 1.2857142em; /* 9px 18px*/
+$button-padding-desktop    : 0.571428em 1.2em;
+$button-border-radius      : 999em;
+$button-font-size          : 14px;
+
+    /**
+     * Button default
+     */
+    
+    $button-default-background : #0067a6;
+    $button-default-color: #fff;
+
+    /**
+     * Button Primary
+     */
+    
+    $button-primary-background: $color-light-grey;
+    $button-primary-border: $color-dark-grey;
+    $button-primary-color: $color-secondary;
+    
+    /**
+     * Button Secondary
+     */
+    
+    $button-secondary-background: $color-light;
+    $button-secondary-border: $color-button-border;
+    $button-secondary-color: $color-button;
+
+    /**
+     * Button Light
+     */
+    
+    $button-light-background: rgba(255, 255, 255, 0.3);
+    $button-light-color: lighten($base-color, 10%);
+    $button-light-border: darken($base-color,10%);
+
+    /**
+     * Button Dark
+     */
+    
+    $button-dark-background: $color-dark;
+    $button-dark-border: $color-dark;
+
+    /**
+     * Button Delete
+     */
+    
+    $button-delete-background: #d38b75;
+    $button-delete-border: #7f211f;
+
+    /**
+     * Button Warning
+     */
+    
+    $button-warning-background: $color-warning;
+    $button-warning-border: $color-warning;
+
+
+    /**
+     * Button facebook
+     */
+    
+    $button-facebook-background: #5970B3;
+    $button-facebook-border: #5970B3;
+
+    /**
+     * Button google
+     */
+    
+    $button-google-background: #EF2213;
+    $button-google-border: #EF2213;
+
+
+
+$button-inverted-background     : #000;
+$button-inactive-background     : #ddd;
+
+
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+
+$base-spacing-unit: $base-line-height!default; /* 24px */
+$half-spacing-unit: $base-spacing-unit / 2!default; /* 12px */
+$third-spacing-unit: $half-spacing-unit / 2!default; /* 6px */
+$double-spacing-unit: $base-spacing-unit * 2!default; /* 48px */
+
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+/*------------------------------------*\
+    ICONS    
+\*------------------------------------*/
+
+$icon-check-mark          : "../images/check-mark.png";
+$icon-x-mark              : "../images/x-mark.png";

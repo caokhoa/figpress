@@ -1,0 +1,381 @@
+/*------------------------------------*\
+	MIXINS
+\*------------------------------------*/
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+@mixin font-size($font-size, $line-height:true){
+    font-size:$font-size;
+    font-size:($font-size / $base-font-size)*1rem;
+    @if $line-height == true{
+        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+}
+
+
+/**
+ * Font size mixin
+ */
+
+@mixin font-size-adapt($mobile: false, $tablet: false, $desktop: false){
+
+		@if $mobile{
+
+				@include font-size($mobile, false);
+
+		}
+
+
+		@if $tablet{
+				
+				@include media-query(tablet-desktop){
+						@include font-size($tablet, false);
+				}
+		}
+
+		@if $desktop{
+				
+				@include media-query(desktop){
+						@include font-size($desktop, false);
+				}
+		}
+}
+
+
+/**
+ * Media Query Mixin
+ */
+
+@mixin media-query($media-query){
+
+		@if $media-query == "mobile"{
+
+				@media screen and (min-width: $bp-mobile-large) { @content; }
+
+		}
+
+		@if $media-query == "tablet-small"{
+
+				@media screen and (min-width: $bp-tablet-small) { @content; }
+
+		}
+
+		@if $media-query == "tablet-large"{
+
+				@media screen and (min-width: $bp-tablet-large) { @content; }
+
+		}
+
+		@if $media-query == "desktop-small"{
+
+				@media screen and (min-width: $bp-desktop-small) { @content; }
+
+		}
+
+		@if $media-query == "desktop-medium"{
+
+				@media screen and (min-width: $bp-desktop-medium) { @content; }
+
+		}
+
+		@if $media-query == "desktop-large"{
+
+				@media screen and (min-width: $bp-desktop-large) { @content; }
+
+		}
+
+		@if $media-query == "desktop-x-large"{
+
+				@media screen and (min-width: $bp-desktop-x-large) { @content; }
+
+		}
+
+		@if $media-query == grid-phone{
+
+				@media only screen and (max-width: $phone-breakpoint-start) { @content; }
+
+		}
+
+		@if $media-query == grid-tablet{
+
+				@media only screen and (min-width: $tablet-breakpoint-start) 
+		and (max-width: $tablet-breakpoint-end) { @content; }
+
+		}
+
+		@if $media-query == grid-desktop{
+
+				@media only screen and (min-width: $desktop-breakpoint-start) { @content; }
+
+		}
+
+		@if $media-query == retina{
+				@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5){
+						@content;
+				}
+		}
+
+		
+}
+
+
+/**
+ * Box Shadow Base
+ */
+
+@mixin base-box-shadow{
+
+	box-shadow: $base-box-shadow;
+}
+
+
+/**
+ * Light Links
+ */
+
+@mixin links-light {
+
+	a{
+		@include link-colors(#fff, #fff, #fff)
+	}
+}
+
+/**
+ * Link Colors: Part of Compass
+ */
+
+@mixin link-colors($normal, $hover: false, $active: false, $visited: false, $focus: false) {
+	color: $normal;
+	@if $visited {
+	&:visited {
+		color: $visited; } }
+	@if $focus {
+	&:focus {
+		color: $focus; } }
+	@if $hover {
+	&:hover {
+		color: $hover; } }
+	@if $active {
+	&:active {
+		color: $active; } } }
+
+
+/**
+ * Focus Styles
+ */
+
+%focus-style{
+	box-shadow :  0 1px 2px rgba(0,0,0,0.075) inset, 
+									0 0 5px rgba(219,231,156,0.5);
+	border-color: $color-dark-blue;
+}
+
+
+/**
+ * Rem Units
+ * Converts properties to both REM and Pixel Values. Based on line-height
+ * @include rem(margin-bottom, 0.5) [0.5]=24px/2=12px/14px=0.85714rem; [1]=24px=24px/14px=1.71429rem
+ * @include rem(padding, 1, 20px); [1]:20px*1=20px/14px=1.42857rem; [2]:20px*2=40px/14px=2.85714rem
+ */
+
+@mixin rem($property, $multiplier: 1, $unit: $base-spacing-unit){
+
+	@if type-of($multiplier) != "number"{
+
+		$unit: $multiplier;
+		$multiplier: 1;
+	}
+
+	@include rem-full($multiplier, $property, $unit);
+}
+
+
+/**
+ * Helper function for REM
+ * @include rem-full(padding, 10px 20px 10px 30px);
+ */
+
+@mixin rem-full($multiplier, $property, $px-values) {
+	// Convert the baseline into rems
+	$baseline-rem: $base-font-size / 1rem * 1;
+	// Print the first line in pixel values
+
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number" {
+		#{$property}: $px-values * $multiplier;
+		#{$property}: $px-values / $baseline-rem * $multiplier; 
+	}
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: ();
+		$pixel-values: ();
+		@each $value in $px-values {
+			// If the value is zero or not a number, return it
+			@if $value == 0 or type-of( $value ) != "number" {
+				$rem-values: append($rem-values, $value); 
+				$pixel-values: append($pixel-values, $value);
+			}
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem * $multiplier); 
+				$pixel-values: append($pixel-values, $value * $multiplier);
+			} 
+		}
+		// Return the property and its list of converted values
+		#{$property}: $pixel-values;
+		#{$property}: $rem-values; 
+	} 
+}
+
+
+/**
+ * Grids
+ */
+
+/**
+ * Calculates Percentage for each column
+ */
+
+@function gridCalc($colNumber, $grid-columns) {
+	@return percentage(($colNumber / $grid-columns));
+}
+
+/**
+ * Convert numbers to words
+ * 1 => 'one'
+ */
+
+@function convert-number-to-word($num) {
+	$count:1;
+	@each $word in "1-24","2-24","3-24","4-24","5-24","6-24","7-24","8-24","9-24","10-24","11-24",
+		"12-24","13-24","14-24","15-24","16-24","17-24","18-24","19-24",
+		"20-24","21-24","22-24","23-24",24{
+		@if ($count == $num) { @return $word; }
+		$count: $count + 1;
+	}
+	@return "invalid";
+}
+
+@function convert-number-to-word-tablet($num) {
+	$count:1;
+	@each $word in "1-24","2-24","3-24","4-24","5-24","6-24","7-24","8-24","9-24","10-24","11-24",
+		"12-24","13-24","14-24","15-24","16-24","17-24","18-24","19-24",
+		"20-24","21-24","22-24","23-24",24{
+		@if ($count == $num) { @return $word; }
+		$count: $count + 1;
+	}
+	@return "invalid";
+}
+
+@function convert-number-to-word-mobile($num) {
+	$count:1;
+	@each $word in "1-24","2-24","3-24","4-24","5-24","6-24","7-24","8-24","9-24","10-24","11-24",
+		"12-24","13-24","14-24","15-24","16-24","17-24","18-24","19-24",
+		"20-24","21-24","22-24","23-24",24{
+		@if ($count == $num) { @return $word; }
+		$count: $count + 1;
+	}
+	@return "invalid";
+}
+
+/**
+ * Position
+ * @include position(absolute, 50% 0 0 50%);
+ */
+
+@mixin position ($position: relative, $coordinates: 0 0 0 0) {
+    @if type-of($position) == list {
+        $coordinates: $position;
+        $position: relative;
+    }
+
+    $top: nth($coordinates, 1);
+    $right: nth($coordinates, 2);
+    $bottom: nth($coordinates, 3);
+    $left: nth($coordinates, 4);
+
+    position: $position;
+
+    @if $top == auto {
+        top: $top;
+    }
+    @else if not(unitless($top)) {
+        top: $top;
+    }
+    @if $right == auto {
+        right: $right;
+    }
+    @else if not(unitless($right)) {
+        right: $right;
+    }
+    @if $bottom == auto {
+        bottom: $bottom;
+    }
+    @else if not(unitless($bottom)) {
+        bottom: $bottom;
+    }
+    @if $left == auto {
+        left: $left;
+    }
+    @else if not(unitless($left)) {
+        left: $left;
+    }
+}
+
+// Micro clearfix provides an easy way to contain floats without adding additional markup
+//
+// Example usage:
+//
+//    // Contain all floats within .wrapper
+//    .wrapper {
+//      @include clearfix;
+//      .content,
+//      .sidebar {
+//        float : left;
+//      }
+//    }
+
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Acknowledgements
+// Micro clearfix: [Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/)
+
+
+/*
+ * @font-face mixin
+ * Bulletproof font-face via Font Squirrel
+ * @include fontface('family', 'assets/fonts/', 'myfontname');
+ */
+
+@mixin fontface($font-family, $font-url, $font-name) {
+	@font-face {
+		font: {
+			family: $font-family;
+			style: normal;
+			weight: normal;
+		}
+		src: url($font-url + '/' + $font-name + '.eot');
+		src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
+			 url($font-url + '/' + $font-name + '.woff') format('woff'),
+			 url($font-url + '/' + $font-name + '.ttf')  format('truetype'),
+			 url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+	}
+}

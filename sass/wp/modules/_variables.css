@@ -1,0 +1,130 @@
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS FROM INUIT CSS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+/*------------------------------------*\
+    $FONT STYLE
+\*------------------------------------*/
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/*------------------------------------*\
+    $UI ELEMENTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $TEXT DIRECTION
+\*------------------------------------*/
+/*------------------------------------*\
+    $COLOR SWATCHES
+\*------------------------------------*/
+/* Sidebar */
+/* Sub header */
+/* Text color of dark blue bg */
+/* background section time log */
+/* color for table data grid */
+/* Text color of light blue bg */
+/* Inactive tabs, button 2 style*/
+/*------------------------------------*\
+    $TABLE
+\*------------------------------------*/
+/*------------------------------------*\
+    $GRID SETTINGS
+\*------------------------------------*/
+/*------------------------------------*\
+    SIDEBAR
+\*------------------------------------*/
+/* Sidebar */
+/*------------------------------------*\
+    $BREAKPOINTS
+\*------------------------------------*/
+/* 620px */
+/* 740px */
+/* 880px */
+/* 955px */
+/* 1100px */
+/* 1240px */
+/* 1403px */
+/* 0, 640px */
+/* 641px, 1024px */
+/* 1025px, 1440px */
+/* 1441px, 1920px */
+/* 1921px */
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Mobile Sizes     
+ */
+/**
+ * Desktop font size
+ * Both tablets and desktops
+ */
+/**
+ * Optional font sizes
+ */
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+/* 5px 7px */
+/* 8px */
+/* 3px*/
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/* 9px 18px*/
+/**
+ * Button default
+ */
+/**
+ * Button Primary
+ */
+/**
+ * Button Secondary
+ */
+/**
+ * Button Light
+ */
+/**
+ * Button Dark
+ */
+/**
+ * Button Delete
+ */
+/**
+ * Button Warning
+ */
+/**
+ * Button facebook
+ */
+/**
+ * Button google
+ */
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+/* 24px */
+/* 12px */
+/* 6px */
+/* 48px */
+/*------------------------------------*\
+    ICONS    
+\*------------------------------------*/
+
+/*# sourceMappingURL=_variables.css.map */

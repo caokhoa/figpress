@@ -1,0 +1,67 @@
+/*------------------------------------*\
+    PLACEHOLDER.CSS
+\*------------------------------------*/
+
+input, textarea {
+	&::-webkit-input-placeholder {
+	  color: $color-placeholder;
+	}
+	&[disabled]::-webkit-input-placeholder {
+	  color: #818686;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: #899090; 
+	   opacity: 0.8;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: #899090;
+	   opacity: 0.8; 
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $color-placeholder;  
+	}
+	&[disabled]:-moz-placeholder {
+	  	color: #737979;
+	}
+	&[disabled]::-moz-placeholder {
+	  	color: #737979;
+	}
+	&[disabled]:-ms-input-placeholder {
+	  	color: #818686;
+	}
+
+	&:focus {
+		&::-webkit-input-placeholder {
+		  color: transparent;
+		}
+		&[disabled]::-webkit-input-placeholder {
+		  color: transparent;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+		   color: transparent;  
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+		   color: transparent;  
+		}
+
+		&:-ms-input-placeholder {  
+		   color: transparent;  
+		}
+	}
+}
+
+::-webkit-input-placeholder, 
+:-moz-placeholder, ::-moz-placeholder, 
+:-ms-input-placeholder {
+	color: $color-placeholder;
+	font-family: $font-face;
+}
+
+::-moz-placeholder {
+	opacity: 1; /* Since FF19 lowers the opacity of the placeholder by default */
+}

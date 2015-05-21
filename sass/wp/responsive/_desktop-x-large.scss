@@ -1,0 +1,9 @@
+@include media-query(desktop-x-large){
+  	body:before {
+		width: -webkit-calc(50% - 538px);
+		width: calc(50% - 538px);
+	}
+	.site {
+	  max-width: 100%;
+	}
+}

@@ -1,0 +1,162 @@
+/*------------------------------------*\
+    PAGINATION.CSS
+\*------------------------------------*/
+
+/**
+ * Pagination Variables
+ */
+
+$pagination-hover-background  : #84a3b7;
+$pagination-active-background : $color-primary;
+
+
+/**
+ * Pagination
+ */
+
+ .t-data-grid .t-data-grid-pager {
+    margin: 0;
+    @include rem(margin-bottom);
+    list-style: none;
+    float: right;
+    @include rem(padding-right, 1, 24px);
+    a {
+        border: 1px $color-disable solid;
+    }
+    a, span.current {
+        display: inline-block;   
+        margin: 0 0 0 5px;     
+        @include font-size($base-font-size);
+        padding: 2px 8px;
+        text-decoration: none;
+    }
+
+    /* Active */
+
+    .current, .current:hover, .current > a, .current > a:hover{
+        background: $pagination-active-background;
+        border: 1px $pagination-active-background solid;
+        color: $color-light;
+    }
+
+    /* Hover */
+
+    a:hover{
+        background: $pagination-hover-background;
+        border-color: $pagination-active-background;
+    }
+
+    /* Icons */
+
+    .fa{
+        //margin-right: 0;
+        color: $base-color;
+    }
+ }
+
+.ui-pagination{
+    margin: 0;
+    @include rem(margin-bottom);
+    list-style: none;
+    font-size: 0;
+
+    > li{
+        display: inline-block;   
+        margin: 0 5px 0 0;     
+        @include font-size($base-font-size);        
+    }
+    > li:last-child {
+        margin-right: 0;
+    }
+
+    > li > a{
+        display: inline-block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: $base-color;
+        border: 1px $color-disable solid;
+    }
+
+    /* Active */
+
+    .current, .current:hover, .current > a, .current > a:hover{
+        background: $pagination-active-background;
+        border: 1px $pagination-active-background solid;
+        color: $color-light;
+    }
+
+    /* Hover */
+
+    a:hover{
+        background: $pagination-hover-background;
+        border-color: $pagination-hover-background;
+    }
+
+    /* Icons */
+
+    .fa{
+        //margin-right: 0;
+        color: $base-color;
+    }
+}
+
+
+/**
+ * Pagination box
+ */
+
+.pagination__box{
+    
+    > a{
+        box-shadow: 0 0 0 1px $base-ui-color inset;
+    }
+
+    &.box--circular {
+        > a{
+            border-radius: 200px;
+            text-align: center;
+            width: 35px;
+            height: 35px;        
+        }
+
+
+        /* Icons */
+
+        .fa{
+            margin-right: 0;
+        }
+
+    }
+}
+
+
+/**
+ * Constricted Pagination
+ */
+
+.ui-pagination--constrict{
+
+    > li{
+        margin-right: -1px;
+    }
+
+    > li > a{
+        border-radius: 0;
+    }
+
+    > li:first-child > a{
+        border-radius: $base-radius 0 0 $base-radius;
+    }
+
+    > li:last-child > a{
+        border-radius: 0 $base-radius $base-radius 0;
+    }
+
+    /**
+     * Icons
+     */
+    
+    .fa{
+        margin-right: 0;
+    }
+}

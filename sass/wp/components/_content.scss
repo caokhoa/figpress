@@ -1,0 +1,55 @@
+/**
+ * Content
+ */
+
+.secondary {
+	background-color: rgba(229, 229, 229, 0.3);
+	display: none;
+	padding: 0 7.6923%;
+	&.toggled-on {
+		border-top: 1px solid transparent;
+		border-bottom: 1px solid transparent;
+		display: block;
+		.secondary-navigation {
+	      display: block;
+	    }
+	}
+	.secondary-navigation {
+		display: none;
+	}
+}
+.c-sidebar .secondary-navigation {
+	display: block;
+}
+.top-navigation {
+	display: none;
+}
+
+.widget-area {
+	margin: 9.09090% auto 0;
+}
+
+.site-footer {
+	padding: 3.84615% 7.6923%;
+}
+.adsense {
+	/*width: 100%;*/
+  	text-align: center;
+  	padding: 20px 0;
+ 	clear: both;
+  	float: none;
+  	overflow: hidden;
+  	&.ads-top {
+  		margin: 0 8.3333%;
+  	}
+  	&.ads-sb, &.ads-s-bottom {
+  		margin: 0;
+  	}
+  	.adframe {
+  		/*width: 728px;
+		height: 90px;*/
+		position: relative;
+		margin: 0 auto;
+		-webkit-transform-origin: 0;
+  	}
+}
