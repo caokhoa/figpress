@@ -1,0 +1,28 @@
+body.login {
+    background-color: #31867d;
+}
+.login h1 a {
+    background: rgba(0, 0, 0, 0) url("../images/f.png") no-repeat scroll center bottom;
+    width: auto;
+}
+.login #nav, .login #backtoblog {
+    background: white none repeat scroll 0 0;
+    margin: 0;
+    padding: 5px 25px;
+    text-shadow: none;
+}
+.login #backtoblog {
+    padding-bottom: 20px;
+}
+.login form {
+    border: 0 none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+#login_error, .login .message {
+    margin-left: 0;
+}
+#login {
+    border-bottom: 4px solid #2ea2cc;
+}
